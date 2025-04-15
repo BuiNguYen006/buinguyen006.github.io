@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register New Account</title>
+  <script>
+    function validateForm() {
+      var email = document.forms["regForm"]["email"].value;
+      var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!pattern.test(email)) {
+        alert("Invalid email address"); // Figure 13.3
+        return false;
+      }
+
+      // Các kiểm tra khác có thể thêm vào đây (username, password, confirm password, v.v.)
+
+      alert("All register information are correct."); // Figure 13.4
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>REGISTER NEW ACCOUNT</h2>
+  <form name="regForm" onsubmit="return validateForm()">
+    Username: <input type="text" name="username"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    Confirm password: <input type="password" name="confirmpassword"><br><br>
+
+    Gender:
+    <input type="radio" name="gender" value="male" checked>Male
+    <input type="radio" name="gender" value="female">Female<br><br>
+
+    Phone: <input type="text" name="phone"><br><br>
+    Email: <input type="text" name="email"><br><br>
+
+    Favourite:
+    <input type="checkbox" name="favourite" value="music">Music
+    <input type="checkbox" name="favourite" value="reading">Reading<br><br>
+
+    Picture: <input type="file" name="picture"><br><br>
+
+    Description:<br>
+    <textarea name="description" rows="4" cols="50"></textarea><br><br>
+
+    Education level:
+    <select name="education">
+      <option value="Aptech">Aptech</option>
+    </select><br><br>
+
+    Language:
+    <select name="language" multiple>
+      <option value="vietnamese">Vietnamese</option>
+      <option value="english">English</option>
+      <option value="french">French</option>
+      <option value="japanese">Japanese</option>
+    </select><br><br>
+
+    <input type="submit" value="Register">
+    <input type="reset" value="Reset">
+  </form>
+</body>
+</html>
